@@ -98,14 +98,11 @@ python3 read_csv.py
     [4 rows x 15 columns]
 
 
-## **Running the script on bacalhau**
+## Adding the scripts and datasets to IPFS
 
-To run pandas on bacalhau you must upload your datasets along with the script to IPFS this can be done by using the IPFS CLI to upload the files or using a pinning service like pinata or nft.storage
+To run Pandas on Bacalhau, you'll need to upload your datasets along with the script to IPFS. You can do that by using the [IPFS CLI](https://docs.ipfs.tech/install/command-line/#official-distributions) to add your files 
 
-Adding the Scripts and Datasets to IPFS
-since we already uploaded these scripts to IPFS there is no need for you to add them
-
-```
+```bash
 $ ipfs add -r .
 added QmPqx4BaWzAmZm4AuBqGtG6dkX7bGSVgjfgpkv2g7mi3uz pandas/read_csv.py
 added QmYErPqtdpNTxpKot9pXR5QbhGSyaGdMFxfUwGHm4rzXzH pandas/transactions.csv
@@ -113,20 +110,24 @@ added QmfKJT13h5k1b23ja3ZCVg5nFL9oKz2bVXc8oXgtwiwhjz pandas
  1.59 KiB / 1.59 KiB [===================================================================================]
 ```
 
+Alternatively, you can use a pinning service like [pinata](https://knowledge.pinata.cloud/en/articles/5509412-how-to-upload-a-large-folder-by-running-a-local-ipfs-node) or [nft.storage](https://nft.storage/docs/how-to/nftup/)
 
-For running pandas in bacalhau you need choose a container which has python and pandas Installed
 
-Structure of the bacalhau command
+## Running the script on Bacalhau
 
-`bacalhau docker run ` similar to docker run
+For running pandas in Bacalhau you need choose a container which has python and pandas installed.
 
--v mount the CID to the container this is the 
+The structure of the bacalhau command
 
-CID:/&lt;PATH-TO-WHERE-THE-CID-IS-TO-BE-MOUNTED> `QmfKJT13h5k1b23ja3ZCVg5nFL9oKz2bVXc8oXgtwiwhjz:/files`
+- `bacalhau docker run`: similar to docker run
 
--w is used to set the working directory
+- `-v`: mount the CID to the container this is the 
 
--- /bin/bash -c 'python hello.py' (Run the script)
+- `CID:/&lt;PATH-TO-WHERE-THE-CID-IS-TO-BE-MOUNTED>`: `QmfKJT13h5k1b23ja3ZCVg5nFL9oKz2bVXc8oXgtwiwhjz:/files`
+
+- `-w`: is used to set the working directory
+
+- `-- /bin/bash -c 'python hello.py'`:  Run the script
 
 ### Command:
 
