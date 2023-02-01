@@ -9,17 +9,32 @@ hide_title: true
 <img src="img/bacalhau-horizontal.jpg" alt="Bacalhau Logo" width="300" />
 </p>
 
+[Bacalhau](https://www.bacalhau.org/) is a platform for fast, cost efficient, and secure computation by running jobs where the data is generated and stored. With Bacalhau you can streamline your exisiting workflows without the need of extensive rewriting by running  arbitrary Docker containers and WebAssembly (wasm) images as tasks.
+
+## Table of Contents
+- [Why Bacalhau](#why-bacalhau)
+- [Getting started](#getting-started---bacalhau-in-1-minute)
+  - [Learn more](#learn-more)
+- [Documentation](#documentation)
+- [Developers guide](#developers-guide)
+  - [Running Bacalhau locally](#running-bacalhau-locally)
+  - [Notes for Dev contributors](#notes-for-dev-contributors)
+- [Ways to contribute ](#ways-to-contribute)
+- [Current state of Bacalhau](current-state-of-bacalhau)
+- [License](#license)
+
+
 ## Overview
 
-Bacalhau is a platform for public, transparent, and optionally verifiable distributed computation. It enables users to run arbitrary Docker containers and WebAssembly (wasm) images as tasks against data stored in the InterPlanetary File System (IPFS). This architecture is also referred to as **Compute Over Data** (or CoD). _[Bacalhau](https://translate.google.com/?sl=pt&tl=en&text=bacalhau&op=translate) was coined from the Portuguese word for salted Cod fish_.  **At the moment we are free volunteer network, enjoy;)** 
+Bacalhau is a platform for fast, cost efficient, and secure computation by running jobs where the data is generated and stored. With Bacalhau you can streamline your exisiting workflows without the need of extensive rewriting by running  arbitrary Docker containers and WebAssembly (wasm) images as tasks. This architecture is also referred to as **Compute Over Data** (or CoD). _[Bacalhau](https://translate.google.com/?sl=pt&tl=en&text=bacalhau&op=translate) was coined from the Portuguese word for salted Cod fish_.  **At the moment we are free volunteer network, enjoy;)** 
 
 ## Why Bacalhau?
 
 ⚡️ **Process jobs fast**: Jobs in Bacalhau are processed where the data was created and all jobs are parallel by default.
  
-💸 **Low cost:** You get to save on ingress/egress fees you encounter whenever you move data around since jobs are processed where the data is created.
+💸 **Low cost:** Reduce (or eliminate) ingress/egress costs since jobs are processed closer to the source. Take advantage of as well idle computation capabilities at the edge.
 
-🔐 **Secure**: Data is not collected in a central location before processing, meaning all scrubbing and security can be applied at the point of collection.
+🔐 **Secure**: Data scrubbing and security can before migration to reduce the chance of leaking private information, and with a far more granular, code-based permission model.
  
 📚 **Large-scale data**: Bacalhau operates on a network of open compute resources made available to serve any data processing workload. With Bacalhau you can batch process petabytes (quadrillion bytes) of data.
 
